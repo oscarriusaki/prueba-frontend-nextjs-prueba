@@ -1,0 +1,69 @@
+import {
+  createContext,
+  FC,
+  PropsWithChildren,
+  ReactNode,
+  useContext,
+  useState,
+} from 'react'
+
+export interface MensajeType {
+  id: string
+  valor: ReactNode
+}
+
+interface UIContextType {
+  sideMenuOpen: boolean
+  closeSideMenu: () => void
+  openSideMenu: () => void
+  addContentBadge: (id: string, valor: ReactNode) => void
+  checkContentBadge: (id: string) => ReactNode
+}
+
+const UIContext = createContext<UIContextType>({} as UIContextType)
+const useSideBar = () => useContext(UIContext)
+
+// const openSideMenu = () => {
+//     setSideMenuOpen(true)
+// }
+
+const SideBarProvider: FC<PropsWithChildren> = ({ children }) => {
+  const [sideMenuOpen, setSideMenuOpen] = useState<boolean>(true)
+  const [mensajes, setMensajes] = useState<MensajeType[]>([])
+
+  const openSideMenu = () => {
+    setSideMenuOpen(true)
+  }
+
+  const closeSideMenu = () => {
+    setSideMenuOpen(false)
+  }
+  const addContentBadge = (id: string, valor: ReactNode) => {
+    const mensajeExistente = mensajes.find((mensaje) => mensaje.id === id)
+    const mensajeActualizados = mensajeExistente
+      ? mensajes.map((mensaje) =>
+          mensaje.id === id ? { ...mensaje, valor } : mensaje
+        )
+      : [...mensajes, { id, valor }]
+    setMensajes(mensajeActualizados)
+  }
+
+  const checkContentBadge = (id: string) =>
+    mensajes.find((mensaje) => mensaje.id === id)?.valor
+
+  return (
+    <UIContext.Provider
+      value={{
+        sideMenuOpen,
+        closeSideMenu,
+        openSideMenu,
+        addContentBadge,
+        checkContentBadge,
+      }}
+    >
+      {children}
+    </UIContext.Provider>
+  )
+}
+
+export { useSideBar, SideBarProvider }
