@@ -1,36 +1,98 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# My App
 
-## Getting Started
+Proyecto Next.js creado con `create-next-app`.
 
-First, run the development server:
+## Resumen
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+Este repositorio contiene una aplicación Next.js. Este README explica cómo configurar el proyecto, instalar dependencias, ejecutarlo en desarrollo y producción, y cómo levantarlo usando Docker Compose.
+
+## Requisitos
+
+- Node.js v18 o superior
+- npm 9+ (o `pnpm` / `yarn` alternativos)
+- Docker y Docker Compose (en Linux: `docker` y `docker-compose` o la integración de Docker Desktop)
+
+## Preparación (clonar y dependencias)
+
+1. Clona el repositorio:
+
+   git clone <url-del-repositorio>
+   cd my-app
+
+2. Instala dependencias (elige uno):
+
+- Con npm:
+
+  npm install
+
+- Con pnpm:
+
+  pnpm install
+
+- Con yarn:
+
+  yarn install
+
+## Variables de entorno
+
+Crea un archivo `.env.local` en la raíz del proyecto para variables privadas que no quieres en el repositorio. Ejemplo mínimo:
+
+```
+# .env.local
+NEXT_PUBLIC_API_URL=http://localhost:3000/api
+# Añade aquí otras variables necesarias por tu app
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Asegúrate de revisar el código para ver qué variables más se requieren (buscar `process.env.` o `NEXT_PUBLIC_`).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Ejecutar en desarrollo (local)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. Instalar dependencias (ver arriba).
+2. Ejecutar el servidor de desarrollo:
 
-## Learn More
+   npm run dev
 
-To learn more about Next.js, take a look at the following resources:
+3. Abre en el navegador:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+   http://localhost:3000
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+El servidor se recarga automaticamente al cambiar archivos.
 
-## Deploy on Vercel
+## Construir y ejecutar en modo producción (local)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. Construir la app:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+   npm run build
+
+2. Ejecutar:
+
+   npm start
+
+Por defecto la app servirá en el puerto 3000.
+
+## Comandos útiles
+
+- npm run dev — servidor de desarrollo
+- npm run build — construir la app
+- npm start — ejecutar la app en modo producción
+- npm test — (si existe) ejecutar tests
+- npm run lint — (si existe) ejecutar linter
+
+## Troubleshooting rápido
+
+- Puerto en uso: cambia el puerto exportando `PORT` o usa otro puerto.
+- Errores de dependencias: borra `node_modules` y lockfile y vuelve a instalar.
+- Si Docker falla al construir por permisos, asegúrate de tener permisos adecuados o añade `--no-cache` si quieres forzar reconstrucción.
+
+## Contribuir
+
+Si vas a contribuir, crea un branch, realiza cambios y abre un Pull Request. Añade documentación de las nuevas variables de entorno o requisitos adicionales.
+
+---
+
+Si quieres, puedo:
+
+- generar también el `Dockerfile` y `docker-compose.yml` en el repositorio,
+- añadir un ejemplo de `.env.example`.
+
+Indica si deseas que cree esos archivos ahora.
