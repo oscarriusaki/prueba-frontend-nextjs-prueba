@@ -15,7 +15,7 @@ import { boxShadowCustom } from '@/components/botones/BotonCardCanEstilo'
 import { FormInputText } from '@/components/form/FormInputText'
 import { FormInputAutocomplete } from '@/components/form/FormInputAutoComplete'
 import { optionType } from '@/components/form/FormInputDropDown'
-import { MenuCustom } from '@/components/menu/MenuCustom'
+// import { MenuCustom } from '@/components/menu/MenuCustom'
 import { optionMenuContactos } from '../../types/InicioType'
 import { iconosOptions } from '@/components/icons/IconosOptions'
 
@@ -614,7 +614,7 @@ export const PortalContactoForm = (
                           label="Titulo"
                         />
                         <Box mr={-1}>
-                          <MenuCustom
+                          {/* <MenuCustom
                             id={`menu-${rowIndex}`}
                             loading={loading}
                             items={optionMenuContactos}
@@ -627,7 +627,7 @@ export const PortalContactoForm = (
                                 eliminarDetalle(rowIndex)
                               }
                             }}
-                          />
+                          /> */}
                         </Box>
                       </Box>
 
