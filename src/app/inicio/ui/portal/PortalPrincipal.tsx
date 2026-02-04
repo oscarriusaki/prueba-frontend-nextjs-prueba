@@ -216,7 +216,7 @@ export const PortalPrincipal = ({
                 order: { xs: 1, sm: 1, md: 2 },
               }}
             >
-              <PortalSvg color={theme.palette.primary.main} size={'100%'} />
+              {/* <PortalSvg color={theme.palette.primary.main} size={'100%'} /> */}
             </Box>
           </Box>
         </Box>
