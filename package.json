@@ -21,7 +21,7 @@
     "js-cookie": "3.0.5",
     "material-icons": "^1.13.14",
     "motion": "12.23.24",
-    "next": "15.5.4",
+    "next": "^16.1.6",
     "next-nprogress-bar": "2.4.7",
     "notistack": "^3.0.2",
     "react": "19.1.0",
