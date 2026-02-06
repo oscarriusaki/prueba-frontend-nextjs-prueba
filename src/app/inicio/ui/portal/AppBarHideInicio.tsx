@@ -56,11 +56,11 @@ function HideOnScroll({ altoNavBar, strollTop }: Props) {
             height: `${altoNavBar}px`,
           }}
         >
-          <IconoSvg
+          {/* <IconoSvg
             tipo={'logoLondraAgetic'}
             color={theme.palette.primary.main}
             size={`${altoNavBar - 25}px`}
-          />
+          /> */}
           <Box
             display={'flex'}
             sx={{

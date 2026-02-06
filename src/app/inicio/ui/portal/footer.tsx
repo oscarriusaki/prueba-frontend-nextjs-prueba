@@ -49,11 +49,7 @@ const Footer = () => {
             }}
             size={{ xl: 3, xs: 3 }}
           >
-            <Button
-              onClick={() => {
-                window.open(`https://www.facebook.com/AgeticBoliviaOficial`)
-              }}
-            >
+            <Button onClick={() => {}}>
               <CardMedia component="div">
                 <Image
                   src={'../../social-media-icons/facebookLight.svg'}
@@ -63,11 +59,7 @@ const Footer = () => {
                 />
               </CardMedia>
             </Button>
-            <Button
-              onClick={() => {
-                window.open(`https://www.instagram.com/agetic_bolivia/`)
-              }}
-            >
+            <Button onClick={() => {}}>
               <CardMedia component="div">
                 <Image
                   src={'../../social-media-icons/instagramLight.svg'}
@@ -77,11 +69,7 @@ const Footer = () => {
                 />
               </CardMedia>
             </Button>
-            <Button
-              onClick={() => {
-                window.open(`https://twitter.com/AgeticBolivia`)
-              }}
-            >
+            <Button onClick={() => {}}>
               <CardMedia component="div">
                 <Image
                   src={'../../social-media-icons/twitterLight.svg'}
@@ -91,11 +79,7 @@ const Footer = () => {
                 />
               </CardMedia>
             </Button>
-            <Button
-              onClick={() => {
-                window.open(`https://www.youtube.com/AgeticBolivia`)
-              }}
-            >
+            <Button onClick={() => {}}>
               <CardMedia component="div">
                 <Image
                   src={'../../social-media-icons/youtubeLight.svg'}

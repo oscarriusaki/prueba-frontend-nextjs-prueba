@@ -514,7 +514,7 @@ export const PortalContactoForm = (
                     control={control}
                     name="info.gmail"
                     label="gmail"
-                    placeholder="@agetic"
+                    // placeholder="@agetic"
                     disabled={loading}
                     rules={rulesGeneral()}
                   />
@@ -696,7 +696,7 @@ export const PortalContactoForm = (
                             <FormInputText
                               id={`detalle.${rowIndex}.item.${itemIndex}.ruta`}
                               name={`detalle.${rowIndex}.item.${itemIndex}.ruta`}
-                              placeholder="https://www.agetic.gob.bo"
+                              // placeholder="https://www.agetic.gob.bo"
                               rules={rulesGeneral()}
                               disabled={loading}
                               control={control}
